@@ -12,4 +12,4 @@ $(document).bind('mobileinit',function(){
 
 该代码能解决，页面在无web服务环境下导致的报错。
 
-在a标签内添加 data-role="dialog" 意味着跳转的下一个页面是以一个对话框的形式展现
+在a标签内添加 data-rel="dialog" 意味着跳转的下一个页面是以一个对话框的形式展现
