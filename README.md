@@ -20,3 +20,24 @@ vertical-align 属性设置元素的垂直对齐方式。
 
 border-radius 给div元素添加圆角
 
+/**************/
+有时候，我们需要将数据存储到sessionStorage和localStorage中,但是，storage只能存储字符串的数据，对于JS中常用的数组或对象却不能直接存储。
+var obj = { name:'Jim' };
+sessionStorage.obj = obj; 
+localStorage.obj = obj; 
+
+var arr = [1,2,3]; 
+sessionStorage.obj = arr; 
+localStorage.obj = arr;
+上面的写法都是不能成功的！但我们可以通过JSON对象提供的parse和stringify将其他数据类型转化成字符串，再存储到storage中就可以了。请看下面的代码。
+var obj = { name:'Jim' }; 
+var str = JSON.stringify(obj); 
+//存入 
+sessionStorage.obj = str; 
+//读取 
+str = sessionStorage.obj; 
+//重新转换为对象 
+obj = JSON.parse(str);
+localStorage也一样，只是和sessionStorage的存储时间不一样。
+/**************/
+
