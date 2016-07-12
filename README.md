@@ -41,3 +41,10 @@ obj = JSON.parse(str);
 localStorage也一样，只是和sessionStorage的存储时间不一样。
 /**************/
 
+//获取url后参数方法
+function getQueryString(name) {  
+	var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");  
+	var r = window.location.search.substr(1).match(reg);  
+	if (r != null) return unescape(r[2]);  
+	return null;  
+} 
