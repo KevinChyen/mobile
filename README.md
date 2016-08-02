@@ -49,3 +49,4 @@ function getQueryString(name) {
 	return null;  
 } 
 
+chrome和ff不支持onunload方法，支持onbeforeunload
