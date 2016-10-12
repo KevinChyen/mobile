@@ -50,3 +50,6 @@ function getQueryString(name) {
 } 
 
 chrome和ff不支持onunload方法，支持onbeforeunload
+
+
+zepto中的tap方法会透传，当页面属于是复合型页面（及页面有重叠或者是叠加的部分）页面上一层的tap方法会透传到页面下部分，导致页面下层部分会被触发click或者跳转之类的方法。慎用！ 最好使用touchend方法，但是同时阻止其冒泡,调用e.preventDefault();方法
