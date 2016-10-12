@@ -52,4 +52,6 @@ function getQueryString(name) {
 chrome和ff不支持onunload方法，支持onbeforeunload
 
 
-zepto中的tap方法会透传，当页面属于是复合型页面（及页面有重叠或者是叠加的部分）页面上一层的tap方法会透传到页面下部分，导致页面下层部分会被触发click或者跳转之类的方法。慎用！ 最好使用touchend方法，但是要注意如果是复合型响应时间（如a标签中同时使用了touched方法）要阻止其默认事件,调用e.preventDefault();方法
+zepto中的tap方法会透传，当页面属于是复合型页面（及页面有重叠或者是叠加的部分）页面上一层的tap方法会透传到页面下部分，导致页面下层部分会被触发click或者跳转之类的方法。慎用！ 最好使用touchend方法，但是要注意如果是复合型响应时间（如a标签中同时使用了touched方法）要阻止其默认事件,调用e.preventDefault()
+
+如果你在某个页面开始加载之前进行跳转，同时想让用户无法感知该页面加载是做不到的，因为window.location.href跳转的时候回建立HTTP请求，但是这个过程是需要时间的，然而页面渲染是快于这个时间，所以会导致的现象就是页面闪一下然后在跳转
